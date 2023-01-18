@@ -1167,8 +1167,7 @@
 							"name": "id_product",
 							"type": "bigint",
 							"length": 0,
-							"primaryKey": true,
-							"nullable": true
+							"primaryKey": true
 						},
 						{
 							"_type": "ERDColumn",
