@@ -11,7 +11,33 @@ create table products(
 	img_product varchar(300) not null
 );
 
-create table client
+create table cart(
+	id_cart bigint not null auto_increment, primary key(id_cart)
+)
+
+create table payment(
+	id_payment bigint not null auto_increment, primary key(id_payment),
+	number_card varchar(20) not null,
+	name_card varchar(20),
+	date_card date
+)
+
+create table orden(
+	id_orden bigint not null auto_increment, primary key(id_orden),
+	direction varchar(100) not null,
+	total float not null
+	id_payment bigint not null, foreign key(id_payment) references payment(id_payment)
+)
+
+create table client(
+	id_client bigint not null auto_increment, primary key(id_client),
+	name varchar(20) not null,
+	last_name varchar(20) not null,
+	number_client varchar(10) not null,
+	direccion varchar(20) not null,
+	email varchar(20) not null,
+	id_cart bigint not null, foreign key(id_cart) references cart(id_cart)
+)
 
 -- Inserts de productos
 
@@ -39,4 +65,3 @@ insert into products (name_product, detail_product, stock, price, img_product) v
 
 insert into products (name_product, detail_product, stock, price, img_product) values ("Cuaderno Tipo F ","Cuaderno Forma Francesa Cuadro Grande Scribe Serie Black 100 hojas", 70,80," https://officemax.vteximg.com.br/arquivos/ids/184915-1150-1150/89466_1.jpg?v=636941158179600000")
 
-select * from products
