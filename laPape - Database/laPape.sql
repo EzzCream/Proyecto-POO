@@ -15,11 +15,16 @@ create table cart(
 	id_cart bigint not null auto_increment, primary key(id_cart)
 )
 
+CREATE TABLE prodCart(
+	id_product bigint NOT NULL, foreign key(id_product) references products(id_products),
+	id_cart bigint not null, foreign key(id_cart) references cart(id_cart)
+)
+
 create table payment(
 	id_payment bigint not null auto_increment, primary key(id_payment),
 	number_card varchar(20) not null,
-	name_card varchar(20),
-	date_card date
+	name_card varchar(20) not null,
+	date_card date not null
 )
 
 create table orden(
