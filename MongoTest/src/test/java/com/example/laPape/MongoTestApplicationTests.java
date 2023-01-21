@@ -1,10 +1,10 @@
-package lapape.backend;
+package com.example.laPape;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendApplicationTests {
+class MongoTestApplicationTests {
 
     @Test
     void contextLoads() {
