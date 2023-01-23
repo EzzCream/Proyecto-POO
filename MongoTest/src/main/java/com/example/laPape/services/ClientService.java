@@ -5,6 +5,8 @@ import com.example.laPape.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class ClientService {
@@ -12,5 +14,8 @@ public class ClientService {
 
     public void addClient(Client client){
         clientRepository.save(client);
+    }
+    public Optional<Client> getClient(String id){
+        return clientRepository.findById(id);
     }
 }
