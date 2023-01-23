@@ -6,13 +6,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document(value = "client")
+@Document(value = "order")
 @Data
-public class Client extends Person {
+public class Order {
     @Id
     private String id;
-    private String username;
-    private String password;
-    private String idCart;
-    private List<String> orders;
+    private double totalPrice;
+    private String address;
+    private String namePerson;
+    private List<Object> paymentMethod;
+    private List<Object> products;
 }

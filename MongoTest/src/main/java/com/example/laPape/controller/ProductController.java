@@ -17,9 +17,8 @@ public class ProductController {
     @PostMapping("/addProduct")
     public ResponseEntity<String> addProduct(@RequestBody Products products){
         productService.addProduct(products);
-        return ResponseEntity.ok("Producto agregado");
+        return ResponseEntity.ok("Product added");
     }
-
     @GetMapping("/getAll")
     public List<Products> getAllProducts(){
         return productService.getAllProducts();
@@ -32,5 +31,10 @@ public class ProductController {
     public ResponseEntity<String> deleteProd(@PathVariable String id){
         productService.deleteById(id);
         return ResponseEntity.ok("Product deleted");
+    }
+    @PutMapping("/updateProduct")
+    public ResponseEntity<String> updateProduct(@RequestBody Products products){
+        productService.addProduct(products);
+        return ResponseEntity.ok("Product updated");
     }
 }
