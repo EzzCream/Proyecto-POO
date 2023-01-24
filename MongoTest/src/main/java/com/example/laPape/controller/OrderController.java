@@ -21,13 +21,6 @@ public class OrderController {
     @PostMapping("create/{id}")
     public ResponseEntity<String> createOrder(@RequestBody Order order, @PathVariable String id){
         String ord = orderService.createOrder(order);
-        Optional<Client> cl = clientService.getClient(id);
-        List<String> list = cl.get().getOrders();
-        list.add(ord);
-        Client clt = new Client();
-        clt.setId(id);
-        clt.setOrders(list);
-        clientService.addClient(clt);
         return ResponseEntity.ok("Order genereted");
     }
     @DeleteMapping("delete/{id}")

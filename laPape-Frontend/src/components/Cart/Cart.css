@@ -1,0 +1,28 @@
+.cardCart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.c {
+	margin: 20px;
+	width: 200px;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 15px rgb(226, 226, 226);
+}
+.c p {
+	color: black;
+}
+.as {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
